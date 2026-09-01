@@ -1,0 +1,24 @@
+name: Publish Release Assets
+
+on:
+  release:
+    types: [published]
+
+permissions:
+  contents: write
+
+jobs:
+  verify-release:
+    name: Verify Release Integrity
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Public Release Repository
+        uses: actions/checkout@v4
+
+      - name: Verify Release Tag Format
+        run: |
+          echo "Release tag: ${{ github.event.release.tag_name }}"
+          if [[ ! "${{ github.event.release.tag_name }}" =~ ^v[0-9]+\.[0-9]+\.[0-9]+ ]]; then
+            echo "Error: Release tag must follow semver format (vX.Y.Z)"
+            exit 1
+          fi

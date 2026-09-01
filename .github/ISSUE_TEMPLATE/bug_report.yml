@@ -1,0 +1,61 @@
+name: Bug Report
+description: Report an issue or unexpected compiler behavior in Tynx
+title: "[Bug]: "
+labels: ["bug", "triage"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thank you for reporting an issue! Please do not include credentials, secrets, private source code, or confidential proprietary assets in public GitHub issues.
+  - type: input
+    id: version
+    attributes:
+      label: Tynx Version
+      description: What version of Tynx are you running? (Run `tynx --version`)
+      placeholder: "0.32.0"
+    validations:
+      required: true
+  - type: dropdown
+    id: os
+    attributes:
+      label: Operating System
+      options:
+        - macOS (Apple Silicon / ARM64)
+        - macOS (Intel / x86_64)
+        - Linux (glibc / x86_64)
+        - Linux (musl / x86_64)
+        - Linux (ARM64)
+        - Windows (x86_64)
+        - Web Playground
+    validations:
+      required: true
+  - type: textarea
+    id: description
+    attributes:
+      label: Problem Description
+      description: A clear and concise description of what the bug is.
+    validations:
+      required: true
+  - type: textarea
+    id: reproduction
+    attributes:
+      label: Reproduction Code Sample
+      description: Provide a minimal TypeScript snippet that triggers the issue.
+      render: typescript
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected Behavior
+      description: What Kotlin output or CLI outcome did you expect?
+    validations:
+      required: true
+  - type: textarea
+    id: actual
+    attributes:
+      label: Actual Behavior & Error Output
+      description: Paste the exact compiler diagnostic output or terminal error.
+      render: shell
+    validations:
+      required: true

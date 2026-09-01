@@ -1,0 +1,46 @@
+name: Installation Problem
+description: Report an issue installing or updating Tynx CLI
+title: "[Install]: "
+labels: ["installation", "triage"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Please report problems encountered when running `install.sh` or setting up the Tynx CLI binary.
+  - type: dropdown
+    id: os
+    attributes:
+      label: Operating System & Architecture
+      options:
+        - macOS (Apple Silicon / ARM64)
+        - macOS (Intel / x86_64)
+        - Linux (x86_64 glibc - Ubuntu, Debian, Fedora, Arch)
+        - Linux (x86_64 musl - Alpine)
+        - Linux (ARM64)
+        - Windows 10/11 (x86_64)
+    validations:
+      required: true
+  - type: input
+    id: shell
+    attributes:
+      label: Shell Environment
+      description: e.g. zsh 5.9, bash 5.2, fish, PowerShell 7
+      placeholder: "zsh 5.9"
+    validations:
+      required: true
+  - type: textarea
+    id: command
+    attributes:
+      label: Command Executed
+      description: What install command did you run?
+      value: "curl -fsSL https://tynx.dev/install.sh | sh"
+    validations:
+      required: true
+  - type: textarea
+    id: error_output
+    attributes:
+      label: Terminal Output / Error Message
+      description: Paste the complete console output including any checksum or download failure messages.
+      render: shell
+    validations:
+      required: true

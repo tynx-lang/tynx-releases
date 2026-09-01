@@ -1,0 +1,31 @@
+name: Feature Request
+description: Suggest an enhancement or language lowering proposal for Tynx
+title: "[Feature]: "
+labels: ["enhancement", "proposal"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thank you for suggesting improvements to Tynx!
+  - type: textarea
+    id: problem
+    attributes:
+      label: Problem or Motivation
+      description: Is your feature request related to a problem or limitation in your TypeScript -> Kotlin workflow?
+    validations:
+      required: true
+  - type: textarea
+    id: proposed_solution
+    attributes:
+      label: Proposed Solution & Code Example
+      description: Describe how the TypeScript feature should be translated into idiomatic Kotlin/JVM code.
+      render: typescript
+    validations:
+      required: true
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: Alternative Approaches Considered
+      description: Describe any alternative designs or workarounds you have considered.
+    validations:
+      required: false
