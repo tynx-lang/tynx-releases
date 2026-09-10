@@ -12,7 +12,7 @@ body:
     attributes:
       label: Tynx Version
       description: What version of Tynx are you running? (Run `tynx --version`)
-      placeholder: "0.32.0"
+      placeholder: "1.0.0"
     validations:
       required: true
   - type: dropdown
