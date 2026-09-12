@@ -23,7 +23,6 @@ body:
         - macOS (Apple Silicon / ARM64)
         - macOS (Intel / x86_64)
         - Linux (glibc / x86_64)
-        - Linux (musl / x86_64)
         - Linux (ARM64)
         - Windows (x86_64)
         - Web Playground

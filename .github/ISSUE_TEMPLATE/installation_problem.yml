@@ -15,7 +15,6 @@ body:
         - macOS (Apple Silicon / ARM64)
         - macOS (Intel / x86_64)
         - Linux (x86_64 glibc - Ubuntu, Debian, Fedora, Arch)
-        - Linux (x86_64 musl - Alpine)
         - Linux (ARM64)
         - Windows 10/11 (x86_64)
     validations:
